@@ -1,0 +1,13 @@
+{
+    "name":"cm-event-server",
+    "version":"0.0.1",
+    "private":true,
+    "scripts":{
+        "start":"node app"
+    },
+    "dependencies":{
+        "express":"3.1.0",
+        "socket.io": "0.9.13",
+        "log4js": "0.5.6"
+    }
+}
