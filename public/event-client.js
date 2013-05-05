@@ -11,6 +11,7 @@
             var hash = $.cookie(COOKIE_KEY);
             
             // just for test purposes, create a cookie with an random number
+            // inspired by http://stackoverflow.com/a/2117523
             if(typeof hash == 'undefined') {
                 hash = 'xxxxxxxx'.replace(/[xy]/g, function(c) {
                     var v = Math.random()*16|0;
@@ -24,7 +25,7 @@
             
             webSocket.on('newMessage', function(payload) {
                 // sanitize event attributes
-                var title = payload.title || "Notificação";
+                var title = payload.title;
                 var message = payload.message;
                 
                 // creates a DesktopNotification without the icon
@@ -53,8 +54,10 @@
             });
             
             // send a CLOSE event to the server in order to remove the socket from the active sockets map
-            // this does not always work, but since there's a timeout on the server, the socket will eventually
-            // be removed following a DISCONNECT event dispatch
+            // this is just in case of using xhr-polling as the socket's transport, since WebSockets are instantly closed
+
+            // does not always work, but since there's a timeout on the server, the socket will eventually
+            // be removed when a DISCONNECT event happens on the server
             window.onbeforeunload = function() {
                 webSocket.emit('close');
             };
