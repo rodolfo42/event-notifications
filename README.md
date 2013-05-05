@@ -32,6 +32,6 @@ Foi usada a framework [Express] [ExpressJS], uma framework simples estilo Sinatr
 Foi usado [Socket.io] [SocketIO] para comunicação cliente-servidor, que inclui suporte a WebSockets.
 
 [PubSub]: http://c2.com/cgi/wiki?PublishSubscribeModel
-[blog]: http://rodolfoferreira.com.br/2013/02/14/useful-solution-for-real-time-event-notifications-for-web-apps-part-1.html
+[blog]: http://rodolfoferreira.com.br/2013/02/14/real-time-event-notifications-for-web-apps-part-1.html
 [ExpressJS]: http://expressjs.com/
 [SocketIO]: http://socket.io/
