@@ -1,6 +1,7 @@
 (function(){
-    // you should change this to whatever the server domain:port is
-    var EVENT_SERVER = "localhost:3000";
+    // you can specify the event server address from a global variable `EVENT_SERVER`
+    // default - get from the current host
+    var eventServer = (window.EVENT_SERVER || window.location.host);
     
     // your app cookie key
     // eg. PHPSESSID or JSESSIONID
@@ -21,7 +22,7 @@
                 $.cookie(COOKIE_KEY, hash, {expires : 3600});
             }
             
-            var webSocket = io.connect('http://' + EVENT_SERVER + '/');
+            var webSocket = io.connect('http://' + eventServer + '/');
             
             webSocket.on('newMessage', function(payload) {
                 // sanitize event attributes
@@ -67,7 +68,7 @@
         // inspired and adapted from ga.js snippet
         (function() {
             var s = document.createElement('script'); s.type = 'text/javascript';
-            s.src = 'http://' + EVENT_SERVER + '/socket.io/socket.io.js';
+            s.src = 'http://' + eventServer  + '/socket.io/socket.io.js';
             // puts the function that prepares the event handlers after the script is loaded because it requires socket.io
             s.onload = prepareNotifications;
             var o = document.getElementsByTagName('script')[0]; o.parentNode.insertBefore(s, o);
