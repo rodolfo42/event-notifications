@@ -3,10 +3,20 @@ var application_root = __dirname,
     path = require("path"),
     fs = require("fs"),
     http = require('http'),
-    log4js = require('log4js');
+    log4js = require('log4js'),
+    listenPort = null;
 
+// gets the port no from the command line
+// ex: "node app 80"
+if(typeof process.argv[2] != 'undefined') {
+    listenPort = process.argv[2];
 // tries to get AppFog port
-var listenPort = (process.env.VCAP_APP_PORT || 3000);
+} else if(process.env.VCAP_APP_PORT) {
+    listenPort = process.env.VCAP_APP_PORT;
+// default port
+} else {
+    listenPort = 3000;
+}
 
 var app = express();
 
