@@ -76,8 +76,8 @@
             setInterval(function(){
                 var on = (webkitNotifications.checkPermission() == 0);
                 if(on) {
-                    $('.on', switchContainer).addClass("btn-success");
-                    $('.off', switchContainer).removeClass("btn-danger");
+                    $('.on', switchContainer).addClass("btn-success").addClass("disabled");
+                    $('.off', switchContainer).removeClass("btn-danger").addClass("disabled");
                 } else {
                     $('.on', switchContainer).removeClass("btn-success");
                     $('.off', switchContainer).addClass("btn-danger");
