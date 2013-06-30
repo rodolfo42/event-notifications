@@ -14,6 +14,13 @@ Node.js was used due to its asynchronous nature and concise code when writing co
 
 [Socket.io] [SocketIO] for comunication between client and server, which includes supports for WebSockets.
 
+### Demo
+
+Go [here][DemoLink]. In this demo, your browser acts as a client (subscriber) for the event server, and is assigned an unique hash which is session-wide.
+
+To see it in action, first enable `DesktopNotifications` via the switch, and then send a message. You will receive only **one** notification. Then, open this same URL in other tabs and send a message through any of them. You will still receive **one** notification. If you access this same URL in other computers, when sending a message, everyone will receive only **one** notification, no matter how many tabs are open (you can test this using Chrome's Incognito mode, but in this case you will receive two notifications - one for each open session).
+
+---
 
 ## Sobre este código
 
@@ -31,6 +38,13 @@ Foi usada a framework [Express] [ExpressJS], uma framework simples estilo Sinatr
 
 Foi usado [Socket.io] [SocketIO] para comunicação cliente-servidor, que inclui suporte a WebSockets.
 
+### Demo
+
+Acesse [aqui][DemoLink]. Neste demo, seu browser é um cliente (subscriber) e é atribuído a ele um cookie com um `hash` único que identifica sua sessão. 
+
+Para testar, primeiro habilite o `DesktopNotifications` usando o switch, e teste o envio de uma mensagem. Você receberá **uma** notificação. Ao abrir várias abas nessa mesma URL e testar novamente, você continuará a receber **uma** notificação. E ao acessar esta mesma URL em outros computadores você pode verificar que ao enviar uma mensagem, todos os outros clientes receberão apenas **uma** notificação (você também pode simular também com o modo privado do Google Chrome, mas neste caso você receberá duas - uma para cada sessão).
+
+[DemoLink]: http://app.rodolfoferreira.com.br/
 [PubSub]: http://c2.com/cgi/wiki?PublishSubscribeModel
 [blog]: http://rodolfoferreira.com.br/2013/02/14/real-time-event-notifications-for-web-apps-part-1
 [ExpressJS]: http://expressjs.com/
