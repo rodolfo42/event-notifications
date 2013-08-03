@@ -231,13 +231,11 @@ io.sockets.on('connection', function(sock){
 
 // uncomment bellow if you're having issues hosting it on AppFog or Heroku
 // due to no support for WebSockets, to date
-/*
 io.configure(function() {
     io.set("transports", ["xhr-polling"]);
     io.set("polling duration", 5);
     io.set("close timeout", 10);
 });
-*/
 
 // executar
 log.info('listening on port ' + listenPort + '..');
