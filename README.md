@@ -44,7 +44,7 @@ Acesse [aqui][DemoLink]. Neste demo, seu browser é um cliente (subscriber) e é
 
 Para testar, primeiro habilite o `DesktopNotifications` usando o switch, e teste o envio de uma mensagem. Você receberá **uma** notificação. Ao abrir várias abas nessa mesma URL e testar novamente, você continuará a receber **uma** notificação. E ao acessar esta mesma URL em outros computadores você pode verificar que ao enviar uma mensagem, todos os outros clientes receberão apenas **uma** notificação (você também pode simular também com o modo privado do Google Chrome, mas neste caso você receberá duas - uma para cada sessão).
 
-[DemoLink]: http://app.rodolfoferreira.com.br/
+[DemoLink]: http://evntsrvr.aws.af.cm/
 [PubSub]: http://c2.com/cgi/wiki?PublishSubscribeModel
 [blog]: http://rodolfoferreira.com.br/2013/02/14/real-time-event-notifications-for-web-apps-part-1
 [ExpressJS]: http://expressjs.com/
