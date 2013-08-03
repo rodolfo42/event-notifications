@@ -28,9 +28,10 @@
                 // sanitize event attributes
                 var title = payload.title;
                 var message = payload.message;
+                var iconUrl = payload.iconUrl || ( window.location.protocol + '//' + eventServer + '/img/icon.png');
                 
                 // creates a DesktopNotification without the icon
-                var n = (webkitNotifications.createNotification("", title, message));
+                var n = (webkitNotifications.createNotification(iconUrl, title, message));
                 
                 // when clicked, the notification should close and the user redirected to the URL, if provided
                 n.onclick = function(e) {

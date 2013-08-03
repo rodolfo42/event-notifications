@@ -26,19 +26,19 @@
         <div class="control-group">
             <div class="control-label">Title</div>
             <div class="controls">
-                <input type="text" id="txtTitle" placeholder="Hello World" />
+                <input type="text" id="txtTitle" value="That’s no moon" />
             </div>
         </div>
         <div class="control-group">
             <div class="control-label">Message</div>
             <div class="controls">
-                <input type="text" id="txtMessage" class="input-xlarge" placeholder="This is my Hello World" />
+                <input type="text" id="txtMessage" class="input-xlarge" value="It’s a space station!" />
             </div>
         </div>
         <div class="control-group">
             <div class="control-label">URL</div>
             <div class="controls">
-                <input type="text" id="txtUrl" placeholder="http://www.google.com/humans.txt" class="input-xlarge" />
+                <input type="text" id="txtUrl" value="http://www.google.com/humans.txt" class="input-xlarge" />
             </div>
         </div>
         <div class="form-actions">
@@ -48,23 +48,11 @@
     </form>
     <script type="text/javascript">
         $(function(){
-            /*var webSocket = io.connect();
-            webSocket.on('newMessage', function(payload) {
-                var title = payload.title || "Notificação";
-                var message = payload.message;
-                var n = webkitNotifications.createNotification("", title, message);
-                n.onclick = function(e){
-                    window.focus();
-                    this.close();
-                };
-                n.show();
-            });*/
             $('#form').on('submit', function(e) {
                 e.preventDefault();
                 var t = $('#txtTitle').val();
                 var m = $('#txtMessage').val();
                 var u = $('#txtUrl').val();
-                if(u[0] != '/') u = ('/' + u);
                 var data = {title: t, message: m, url: u};
                 // var result = webSocket.emit('message', data);
                 // $(this).trigger('reset');
